@@ -129,7 +129,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, '../')));
+app.use(express.static(path.join(__dirname, 'pages')));
 
 // Serve URLs like /ftp/thing as public/ftp/thing
 app.use('/michong', serveIndex(path.join(__dirname, '../michong'), {'icons': true}));

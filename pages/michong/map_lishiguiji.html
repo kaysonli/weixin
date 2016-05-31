@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+    <title>扫描二维码</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/data.css">
+    <script src="js/jquery-1.7.2.min.js"></script>
+</head>
+<body class="grey_bg">
+    <h3 class="title">日期</h3>
+    <div class="data_box">
+        <div id="year">
+            <ul>
+                <li>2014年</li>
+                <li>2015年</li>
+                <li>2016年</li>
+                <li>2018年</li>
+                <li>2022年</li>
+                <li>2014年</li>
+                <li>2015年</li>
+                <li>2016年</li>
+                <li>2018年</li>
+                <li>2022年</li>
+            </ul>
+        </div>
+        <div id="month">
+            <ul>
+                <li>1月</li>
+                <li>2月</li>
+                <li>3月</li>
+                <li>4月</li>
+                <li>5月</li>
+                <li>12月</li>
+            </ul>
+        </div>
+        <div id="day">
+            <ul>
+                <li>1日</li>
+                <li>2日</li>
+                <li>3日</li>
+                <li>4日</li>
+                <li>5日</li>
+                <li>3日</li>
+                <li>4日</li>
+                <li>5日</li>
+                <li>3日</li>
+                <li>4日</li>
+                <li>5日</li>
+            </ul>
+        </div>
+        <div class="filter"></div>
+    </div>
+    <div class="detail_time">
+        <h3 class="start_time">开始时间</h3>
+        <h3 class="end_time">结束时间</h3>
+    </div>
+    <div class="data_box">
+        <div id="begin">
+            <ul>
+                <li>22:11</li>
+                <li>21:40</li>
+                <li>12:50</li>
+                <li>22:11</li>
+                <li>21:40</li>
+                <li>12:50</li>
+            </ul>
+        </div>
+        <div id="over">
+            <ul>
+                <li>22:21</li>
+                <li>22:22</li>
+                <li>22:23</li>
+                <li>22:24</li>
+                <li>22:11</li>
+                <li>21:40</li>
+                <li>12:50</li>
+            </ul>
+        </div>
+        <div class="filter"></div>
+    </div>
+    <div class="lishiguiji_sbt">
+        <input type="submit" class="btn_y" value="确定"></div>
+    <script>
+$(function(){
+    var $year=$('#year ul li');
+    var $month=$('#month ul li');
+    var $day=$('#day ul li');
+    var $begin=$('#begin ul li');
+    var $over=$('#over ul li');
+    var line=[];
+    function getLine(){
+        $('.filter').each(function(){
+            var a=$(this).offset().top;
+            line.push(a);
+            return line;
+        })
+    }
+    getLine();
+    function Highlight(obj,pointline){
+        obj.each(function(index,el){
+            var selfTop=$(this).offset().top;
+            var selfH=$(this).height();
+            if (selfTop-pointline+selfH>10 && selfTop-pointline+selfH/2< selfH) {
+                $(this).css({
+                    color:"#000",
+                    fontWeight:"bold",
+                })
+            }else{
+                $(this).css({
+                    color:"#bbb",
+                    fontWeight:"normal",
+                })
+            }
+        })
+    }
+        Highlight($year,line[0]);
+        Highlight($month,line[0]);
+        Highlight($day,line[0]);
+        Highlight($begin,line[1]);
+        Highlight($over,line[1]);
+    document.addEventListener('touchmove', function(){
+        Highlight($year,line[0]);
+        Highlight($month,line[0]);
+        Highlight($day,line[0]);
+        Highlight($begin,line[1]);
+        Highlight($over,line[1]);
+    })
+})
+</script></body>
