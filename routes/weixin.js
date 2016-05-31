@@ -125,5 +125,12 @@ weixin.eventMsg(function(msg) {
     console.log("eventMsg received");
     console.log(JSON.stringify(msg));
 });
+// Start
+app.post('/', function(req, res) {
+
+    // loop
+    weixin.loop(req, res);
+
+});
 
 module.exports = router;
