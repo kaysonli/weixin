@@ -126,7 +126,7 @@ weixin.eventMsg(function(msg) {
     console.log(JSON.stringify(msg));
 });
 // Start
-app.post('/', function(req, res) {
+router.post('/', function(req, res) {
 
     // loop
     weixin.loop(req, res);
