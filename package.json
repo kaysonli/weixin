@@ -14,9 +14,7 @@
     "moment": "^2.13.0",
     "morgan": "~1.6.1",
     "request-json": "^0.5.6",
-    "serve-favicon": "~2.3.0"
-  },
-  "devDependencies": {
+    "serve-favicon": "~2.3.0",
     "coordtransform": "^2.0.2",
     "cors": "^2.7.1",
     "express-session": "^1.13.0",
@@ -27,5 +25,7 @@
     "serve-index": "^1.7.3",
     "socket.io": "^1.4.6",
     "weixin-api": "^0.1.7"
+  },
+  "devDependencies": {
   }
 }
