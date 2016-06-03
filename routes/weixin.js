@@ -30,7 +30,7 @@ weixin.textMsg(function(msg) {
                 fromUserName: msg.toUserName,
                 toUserName: msg.fromUserName,
                 msgType: "text",
-                content: "这是文本回复",
+                content: "<a href='http://www.baidu.com'>链接百度</a>",
                 funcFlag: 0
             };
             break;
